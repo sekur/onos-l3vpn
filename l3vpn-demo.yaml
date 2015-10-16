@@ -1,0 +1,35 @@
+name: l3vpn-demo
+description: A L3VPN demo app for ONOS
+author: Peter K. Lee <peter@intercloud.net>
+license: Apache-2.0
+homepage: http://github.com/saintkepha/onos-l3vpn
+repository: git://github.com/saintkepha/onos-l3vpn
+keywords:
+  - onos
+  - sal
+  - l3vpn
+  - demo
+
+schema: !yang ietf-l3vpn-svc.yang
+
+# below config provides default parameters (optional)
+config: !json l3vpn-demo.json
+
+dependencies:
+  ietf-routing: !yang ietf-routing.yang
+
+# CONTROL LOGIC bindings
+module:
+  ietf-l3vpn-svc:
+
+    # control logic behaviors
+    save: !coffee/function |
+      (prev) -> (resolve, reject) ->
+        console.info "triggering save on this module, we should take some actions here"
+        diff = @diff()
+        if diff?
+          console.info "detected configuration change"
+          console.info diff
+          resolve this
+        else
+          reject "no change detected, aborting save operation"

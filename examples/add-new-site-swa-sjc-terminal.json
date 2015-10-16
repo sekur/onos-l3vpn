@@ -1,0 +1,23 @@
+{
+  "site-id": "swa-sjc-terminal",
+  "location": {
+    "address": "1701 Airport Blvd",
+    "zip-code": "95110",
+    "city": "San Jose",
+    "country-code": "US"
+  },
+  "management": {
+    "address": "7.7.7.7"
+  },
+  "vpn-policy": {
+    "entries": [
+      {
+        "id": 1,
+        "vpn": {
+          "vpn": "example-l3vpn-service",
+          "site-role": "any-to-any-role"
+        }
+      }
+    ]
+  }
+}

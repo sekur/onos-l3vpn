@@ -1,0 +1,46 @@
+{
+  "ietf-l3vpn-svc": {
+    "l3vpn-svc": {
+      "vpn-svc": [
+        {
+          "name": "example-l3vpn-service",
+          "customer-name": "SouthWest Airlines",
+          "topology": "any-to-any",
+          "cloud-access": [
+            {
+              "cloud-identifier": "Internet",
+              "authorized-sites": [
+                { "site-id": "swa-lax-terminal" }
+              ]
+            }
+          ]
+        }
+      ],
+      "sites": [
+        {
+          "site-id": "swa-lax-terminal",
+          "location": {
+            "address": "1 WorldWay",
+            "zip-code": "90045",
+            "city": "Los Angeles",
+            "country-code": "US"
+          },
+          "management": {
+            "address": "8.8.8.8"
+          },
+          "vpn-policy": {
+            "entries": [
+              {
+                "id": 1,
+                "vpn": {
+                  "vpn": "example-l3vpn-service",
+                  "site-role": "any-to-any-role"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

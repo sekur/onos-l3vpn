@@ -1,0 +1,5 @@
+{ 
+  "name": "new-onos-vpn", 
+  "customer-name": "ON.LAB ONOS",
+  "topology": "hub-spoke"
+} 
