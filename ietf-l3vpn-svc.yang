@@ -1534,8 +1534,7 @@ module ietf-l3vpn-svc {
 				List of VPN services.
 				";
     }
-		
-		
+
     list sites {
       key site-id;
 				

@@ -25,11 +25,9 @@ module:
     # control logic behaviors
     save: !coffee/function |
       (prev) -> (resolve, reject) ->
-        console.info "triggering save on this module, we should take some actions here"
         diff = @diff()
         if diff?
-          console.info "detected configuration change"
-          console.info diff
-          resolve this
-        else
-          reject "no change detected, aborting save operation"
+          console.info "[ietf-l3vpn-svc] detected configuration change during save"
+          console.info JSON.stringify diff, null, 2
+        resolve this
+
